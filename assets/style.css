@@ -106,7 +106,7 @@ h2.d { font-size: clamp(2.9rem, 6.2vw, 5.8rem); text-wrap: balance; }
 .burger[aria-expanded="true"] i:last-child { top: 20px; transform: rotate(-45deg); }
 
 /* hero */
-.hero { position: relative; overflow: hidden; padding-top: clamp(24px, 3vw, 40px); }
+.hero { position: relative; overflow: hidden; padding-block: clamp(24px, 3vw, 40px) clamp(20px, 2.4vw, 32px); }
 .hero-grid { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); align-items: center; gap: clamp(16px, 3vw, 44px); }
 .hero h1 { margin-top: 22px; font-size: clamp(4rem, min(8.6vw, 13.6vh), 9.4rem); line-height: .86; }
 .hero h1 em { display: block; margin-top: .06em; }
@@ -172,7 +172,7 @@ h2.d { font-size: clamp(2.9rem, 6.2vw, 5.8rem); text-wrap: balance; }
 .mains.is-off .mains-s { color: #aaa; }
 
 /* tabliczka rysunkowa */
-.plate { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: clamp(20px, 3vw, 36px); border: 2px solid var(--ink); border-bottom: 0; background: var(--white); }
+.plate { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: clamp(20px, 3vw, 36px); border: 2px solid var(--ink); background: var(--white); }
 .plate > div { padding: 12px 16px; border-right: 1px solid var(--ink); min-width: 0; }
 .plate > div:last-child { border-right: 0; }
 .plate dt { font: 600 .66rem/1.2 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
@@ -494,6 +494,8 @@ td:last-child { font-weight: 700; }
   .plate { grid-template-columns: repeat(3, 1fr); }
   .plate > div { border-bottom: 1px solid var(--ink); }
   .plate > div:nth-child(3) { border-right: 0; }
+  .plate:not(.plate-dark) > div:nth-child(n+4) { border-bottom: 0; }
+  .plate:not(.plate-dark) > div:last-child { grid-column: span 2; }
   .plate-dark { grid-template-columns: 1fr; }
   .plate-dark > div { border-bottom: 1px solid var(--board-line); }
   .plate-dark > div:last-child { border-bottom: 0; }
@@ -542,6 +544,7 @@ td:last-child { font-weight: 700; }
   .plate { grid-template-columns: 1fr 1fr; }
   .plate > div:nth-child(3) { border-right: 1px solid var(--ink); }
   .plate > div:nth-child(2n) { border-right: 0; }
+  .plate:not(.plate-dark) > div:nth-child(4) { border-bottom: 1px solid var(--ink); }
   .plate > div:last-child { grid-column: 1 / -1; border-right: 0; border-bottom: 0; }
   .plate-dark { grid-template-columns: 1fr; }
   .plate-dark > div, .plate-dark > div:nth-child(3) { grid-template-columns: 92px 1fr; border-right: 0; padding: 13px 15px; }
